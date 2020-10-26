@@ -1,7 +1,0 @@
-Cisco-IOS-XE-ospf:ospf:
-   - id: 10
-     router-id: 10.240.0.180
-     network:
-       - ip: 10.240.0.180
-         mask: 0.0.0.0
-         area: 0

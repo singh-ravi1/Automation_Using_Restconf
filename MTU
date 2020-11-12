@@ -1,0 +1,31 @@
+import requests
+import urllib3
+
+USER = 'cisco'
+PASS = 'cisco'
+
+# disable warnings from SSL/TLS certificates
+requests.packages.urllib3.disable_warnings()
+
+
+url = "https://10.0.0.1/restconf/data/Cisco-IOS-XE-native:native/if/interface/GigabitEthernet=1/mtu "
+
+headers = {
+    'Accept': "application/yang-data+json",
+    'Content-Type': "application/yang-data+jason",
+    'cache-control': "no-cache",
+    }
+
+print("----------------------")
+print("Configuration Parameters:")
+print("----------------------")
+
+response = requests.get(url, auth=(USER, PASS),
+                            headers=headers, verify=False)
+print(response.text)
+
+print("----------------------")
+print("Thanks you:")
+print("----------------------")
+
+
